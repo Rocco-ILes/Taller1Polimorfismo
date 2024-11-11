@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    
+    <!-- Información básica del proyecto -->
+    <groupId>org.example</groupId>
+    <artifactId>Taller1Poliformismo</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <!-- Configuración de propiedades del proyecto -->
+    <properties>
+        <!-- Define la codificación de los archivos fuente -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- Establece la versión de Java que se utilizará para compilar el código -->
+        <maven.compiler.release>17</maven.compiler.release>
+    </properties>
+
+    <!-- Dependencias del proyecto -->
+    <dependencies>
+        <!-- Dependencia para JUnit 5 (para pruebas unitarias) -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.11.3</version>
+            <scope>test</scope>
+        </dependency>
+        
+        <!-- Otras dependencias necesarias pueden ser añadidas aquí -->
+    </dependencies>
+
+    <!-- Configuración del plugin de compilación -->
+    <build>
+        <plugins>
+            <!-- Plugin para compilar el código fuente Java -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.10.1</version> <!-- Usar la versión más reciente o compatible -->
+                <configuration>
+                    <!-- Configura el nivel de Java -->
+                    <source>17</source>
+                    <target>17</target>
+                </configuration>
+            </plugin>
+
+            <!-- Plugin para ejecutar pruebas -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version> <!-- Versión recomendada para JUnit 5 -->
+                <configuration>
+                    <includes>
+                        <!-- Incluye solo las clases de prueba que empiecen con "Test" -->
+                        <include>**/Test*.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
+
+    
